@@ -1,6 +1,6 @@
 package com.company;
 
-public class LandLine implements Telephone {
+public class LandLine  {
 
     private String myNumber;
     private boolean isRinging;
@@ -9,17 +9,17 @@ public class LandLine implements Telephone {
         this.myNumber = myNumber;
     }
 
-    @Override
+
     public void powerOn() {
         System.out.println("Landline is always On!");
     }
 
-    @Override
+
     public void dial(String phoneNumber) {
         System.out.println("Now Ringing "+ phoneNumber +" on Landline");
     }
 
-    @Override
+
     public void answer() {
         if (isRinging){
             System.out.println("Answer the landline");
@@ -29,7 +29,7 @@ public class LandLine implements Telephone {
         }
     }
 
-    @Override
+
     public boolean callPhone(String phoneNumber) {
         if (phoneNumber.equals(myNumber)){
             isRinging = true;
@@ -40,8 +40,33 @@ public class LandLine implements Telephone {
         return isRinging;
     }
 
-    @Override
+
     public boolean isRinging() {
         return isRinging;
+    }
+
+
+    public boolean dialing() {
+        return false;
+    }
+
+
+    public void calling() {
+
+    }
+
+
+    public boolean answering() {
+        return false;
+    }
+
+
+    public boolean declining() {
+        return false;
+    }
+
+
+    public boolean power() {
+        return false;
     }
 }

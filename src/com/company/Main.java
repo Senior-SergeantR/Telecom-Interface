@@ -1,23 +1,50 @@
 package com.company;
 
+import java.util.*;
+
 public class Main {
+    void mainMenu() {
+
+        mobilePhone mp = new mobilePhone();
+        do {
+            Scanner txt = new Scanner(System.in);
+            System.out.println("What do you wish to do with the phone: " +
+                    "\n 1. Call" +
+                    "\n 2. Text" +
+                    "\n 3. Play games" +
+                    "\n Enter Choice:");
+            int enter = txt.nextInt();
+            switch (enter) {
+                case 1 -> mp.calling();
+                case 2 -> {
+                    System.out.println("The Messaging App");
+                    mp.message();
+                }
+                case 3 -> System.out.println("Not yet  installed");
+                default -> System.out.println("Option not Applicable");
+            }
+
+        }while(mp.power());
+    }
 
     public static void main(String[] args) {
 
-        LandLine officePhone = new LandLine("98562141");
-        officePhone.powerOn();
-        officePhone.callPhone("98562141");
-        officePhone.answer();
-        officePhone.dial("52545136");
+        mobilePhone mp = new mobilePhone();
 
-        System.out.println("\t\t=");
-        mobilePhone myPhone = new mobilePhone("3241216516");
-        myPhone.powerOn();
-        myPhone.callPhone("3241216516");
-        myPhone.answer();
-        myPhone.dial("82545136");
-        myPhone.isRinging();
+            if (mp.power()) {
+                Main menu = new Main();
+                menu.mainMenu();
 
+            } else {
+                System.out.println("The Mobile Subscriber Cannot be Reached!!!");
+            }
+        }
 
     }
-}
+
+
+
+
+
+
+
