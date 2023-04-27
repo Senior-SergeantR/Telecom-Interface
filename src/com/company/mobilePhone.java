@@ -85,6 +85,7 @@ public class mobilePhone implements Telephone{
 
     }
     void inbox(){
+        
         System.out.println(" Hi there " +
                 " how are you " +
                 " where are you from " +
@@ -111,7 +112,7 @@ public class mobilePhone implements Telephone{
             case 1 -> {
                 System.out.println("Type your message here: ");
                 String Message = sc2.nextLine();
-                System.out.println();
+
                 System.out.println("Enter the recipient: ");
                 String Recipient = sc2.nextLine();
 
@@ -129,11 +130,23 @@ public class mobilePhone implements Telephone{
                 } else if (option == 2) {
                     System.out.println("not sent!!!");
                 } else if (option == 3) {
+                    System.out.println("Edit message: \n" + Message );
+                    Message = sc2.nextLine();
+                    System.out.println("Edited message: \n" + Message );
+                    System.out.println("Do you wish to send this  " +
+                            "\nMessage: \n" + Message +
+                            "\nTo: " + Recipient);
 
                 } else if (option == 4){
-
+                    System.out.println("Change recipient: \n" + Recipient );
+                    Recipient = sc2.nextLine();
+                    System.out.println("Change recipient: \n" + Recipient );
+                    System.out.println("Do you wish to send this  " +
+                            "\nMessage: \n" + Message +
+                            "\nTo: " + Recipient);
                 }else{
                     System.out.println("Not Applicable ");
+                    message();
                 }
 
             }

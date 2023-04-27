@@ -30,7 +30,7 @@ public class Main {
     public static void main(String[] args) {
 
         mobilePhone mp = new mobilePhone();
-
+                mp.power();
             if (mp.power()) {
                 Main menu = new Main();
                 menu.mainMenu();
